@@ -1,0 +1,171 @@
+<style>
+body {
+      background: black;
+}
+.background {
+      background-image: url("https://pathak-pariwar.github.io/images/bg.jpg");
+      width : 100%;
+      height : 100%;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      transform: rotateX(180deg);
+      z-index: -5;
+}
+
+.menu {
+      width : 95%;
+      height : 125px;
+      background: black;
+      color : white;
+      border-radius: 15px;
+      position : fixed;
+      margin-left : 2%;
+      margin-top : 20px;
+      top: 0;
+      display: flex;
+      align-items: center;
+      z-index: 10;
+}
+.menu h1{
+      font-size: 65px;
+      margin-left: 20px;
+      color : crimson;
+      font-weight: 1000;
+      font-family: fantasy;
+}
+.arrow {
+      margin-left : 650px;
+}
+.arrow div {
+      width : 75px;
+      height: 12px;
+      background: white;
+      border-radius: 12px;
+      transition: 0.25s linear;
+}
+#aa {
+      margin-bottom : 10px;
+}
+#ab {
+      margin-bottom: 10px;
+}
+.menu-bar {
+      width: 100%;
+      height : 900;
+      position: fixed;
+      background : #00203F;
+      top : -1000;
+      z-index: 5;
+      transition: 0.35s linear;
+}
+
+.menu-bar ul {
+      list-style: none;
+}
+
+.menu-bar ul li {
+      font-size : 70px;
+      color : white;
+      text-align: center;
+      margin-top: 50px;
+      font-weight: 1000;
+      font-family: fantasy;
+}
+
+.info {
+      background: white;
+      border-radius: 50px;
+      box-shadow: 2px 2px 2px 2px #00203F;
+      height : 1000px;
+      width : 90%;
+      z-index: 4;
+      margin: 0 5%;
+      position: fixed;
+      top: 250px;
+}
+
+.info h1 {
+      font-size: 75px;
+      font-family: fantasy;
+      text-align: center;
+}
+
+.info p {
+      font-size: 35px;
+      margin: 0 2.5%;
+      font-family: fantasy;
+}
+li{
+      font-size: 35px;
+      text-align: left;
+      font-family: fantasy;
+}
+ol {
+      margin-left: 2.5%;
+}
+
+.info h2 {
+      font-size: 50px;
+      margin: 1.5% 2.5%;
+      font-family: fantasy;
+      text-align: center;
+}
+</style>
+
+<body>
+<div class="background"></div>
+<div class="menu">
+<h1>CMP</h1>
+<div onclick="open_menu()" class="arrow">
+<div id="aa"></div>
+<div id="ab"></div>
+<div id="ac"></div>
+</div>
+</div>
+
+<div class="menu-bar" id="bar">
+<ul>
+<li style="margin-top: 200px" onclick="open('rules')">Rules</li>
+<li onclick="open('players')">Players</li>
+<li onclick="open('rules')">Teams</li>
+<li onclick="open('roles')">Roles</li>
+<li onclick="open('register')">Register</li>
+</ul>
+</div>
+
+<div class="info">
+<h1>Information</h1>
+<p>This is the official website of Corrupted Multiplayer a minecraft server. This server is for bedrock. It is based on team system. There are multiple teams and each team consists of 4 players. You can make your own team by registering on this website. The requirements for creating a team are :<br><ol type="n"><li>4 members are required</li><li>Team name is necessary</li><li>Team leader is necessary</li><li>Team must be registered</li></ol></p>
+<h2 style="margin-top: 10%">IP : cmp0.aternos.me</h2>
+<h2 style="margin-bottom: 5%">Port : 16782</h2>
+</div>
+
+</body>
+<script>
+let menu_state = false
+function open_menu(){
+      if (menu_state){
+            document.querySelector("#ab").style.display = "block";
+            document.querySelector("#aa").style.transform = "rotateZ(0deg)";
+            document.querySelector("#ac").style.marginTop = "10px";
+            document.querySelector("#ac").style.transform = "rotateZ(0deg)";
+            menu_state = false
+            document.querySelector(".menu-bar").style.top = "-1000";
+      }
+      else{
+            document.querySelector("#ab").style.display = "none";
+            document.querySelector("#aa").style.transform = "rotateZ(45deg)";
+            document.querySelector("#ac").style.marginTop = "-20px";
+            document.querySelector("#ac").style.transform = "rotateZ(-45deg)";
+            menu_state = true
+            document.querySelector(".menu-bar").style.top = "0";
+}
+}
+
+function open(x){
+      window.open("https://corrupted-multiplayer.github.io/" + x)
+}
+
+</script>
